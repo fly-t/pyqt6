@@ -57,3 +57,23 @@ kwargs.get('v2'): 100
 1 2 3
 ```
 
+
+**sys.argv**
+
+sys.argv is an arg of command line from sys module
+
+``` python
+import sys
+print(sys.argv)
+```
+
+command line
+
+``` bash
+button.py hello sys_argv
+# ouput 
+['.\\02_Using_a_SimpleButton\\button.py', 'hello', 'sys_argv']
+```
+
+
+

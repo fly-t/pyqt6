@@ -7,25 +7,19 @@ from PySide6.QtCore import Slot
 def slot_print_hello():
     print("hello")
 
+# now we must create the QApplication to run GUI
+# sys.argv is an arg of command line from sys module
+app = QApplication(sys.argv)  # create app must befor a qwidget
+
+# Create a button
+button = QPushButton("Click me")
+# Connect the button to the function
+button.clicked.connect(slot_print_hello)
+# Show the button
+button.show()
 
 
-def hello_plus(func):
-    def wrapper(*args, **kwargs):
-        print("hello plus")
-        
-        print("args:", args)
-        print("args[0]:", args[0])
-        print("args[1]:", args[1])
-        print("args[2]:", args[2])
-
-        print("kwargs.get('v1'):",kwargs.get("v1"))
-        print("kwargs.get('v2'):", kwargs.get("v2"))
-        return func(*args)
-    return wrapper
-
-@hello_plus
-def hello(a,b,c):
-    print(a,b,c)
 
 if __name__ =="__main__":
-    hello(1, 2, 3, v1=200, v2=100)
+    # Run the main Qt loop
+    app.exec()
