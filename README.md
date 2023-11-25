@@ -147,3 +147,46 @@ use QtDesinger to desing ui and slot we can focus on logic developing.
 
 4. then you will see the ui of python file.
 
+## 08 Using .qrc file
+
+offical is no right that first line need delete.
+right file
+``` xml
+</ui>   <--------Wrong--------
+
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/play.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/previous.png</file>
+    <file>icons/forward.png</file>
+</qresource>
+</RCC>
+```
+
+
+**icons.qrc**
+
+right file  
+
+``` xml
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>../icons/play.png</file>
+        <file>../icons/pause.png</file>
+        <file>../icons/stop.png</file>
+        <file>../icons/previous.png</file>
+        <file>../icons/forward.png</file>
+    </qresource>
+</RCC>
+
+```
+command line
+
+``` bash
+pyside6-rcc icons.qrc -o rc_icons.py
+```
+
+with some bug not fix!!!!
