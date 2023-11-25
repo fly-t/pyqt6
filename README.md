@@ -102,3 +102,28 @@ class Form(QDialog):
         super().__init__(parent) # 单继承的时候二者无区别
 ```
 
+## 05 Table_Widget
+
+``` python
+class Tabl_demo(QTableWidget):
+    colors = [("Red", "#FF0000"),
+              ("Green", "#00FF00"),
+              ("Blue", "#0000FF"),
+              ("Black", "#000000"),
+              ("White", "#FFFFFF"),
+              ("Electric Green", "#41CD52"),
+              ("Dark Blue", "#222840"),
+              ("Yellow", "#F9E56d")]
+
+    def __init__(self, parent=None):
+        # 这里为什么不需要self.item_name, 因为这里只是局部使用的，不需要存储在对象中，对象中使用self前缀的变量表示可以共享访问.
+
+        for i, (name, code) in enumerate(self.colors):
+            item_name = QTableWidgetItem(name)
+            item_code = QTableWidgetItem(code)
+            item_color = QTableWidgetItem()
+            item_color.setBackground(self.get_rgb_from_hex(code))
+            self.setItem(i, 0, item_name)
+            self.setItem(i, 1, item_code)
+            self.setItem(i, 2, item_color)
+``` 
