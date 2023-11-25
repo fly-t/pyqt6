@@ -75,5 +75,9 @@ button.py hello sys_argv
 ['.\\02_Using_a_SimpleButton\\button.py', 'hello', 'sys_argv']
 ```
 
+## 03 Signals and Slots
 
+due to the nature of Qt, QObject require a way to communicate, so the slots and gisnal wasborn.
+
+this sound like callback function. but there ar essential differences that make it an unintuitive approach, like ensuring the type correctness of callback arguments, and some others.
 
