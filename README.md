@@ -81,3 +81,24 @@ due to the nature of Qt, QObject require a way to communicate, so the slots and 
 
 this sound like callback function. but there ar essential differences that make it an unintuitive approach, like ensuring the type correctness of callback arguments, and some others.
 
+you can create any signal to connect sloat.
+
+``` python
+signal1 = Signal(int)  # Python types
+signal2 = Signal(QUrl)  # Qt Types
+signal3 = Signal(int, str, int)  # more than one type
+signal4 = Signal((float,), (QDate,))  # optional types
+```
+
+## 04 Creating_a_Dialog_Application
+
+``` python
+class Form(QDialog):
+
+    def __init__(self, parent=None):
+        super(Form, self).__init__(parent) # 显式调用， 多继承的时候使用， super为什么传递类还需要传递self对象， 对象和类同时确定才能具体确定。
+    
+    def __init__(self, parent=None):
+        super().__init__(parent) # 单继承的时候二者无区别
+```
+
