@@ -127,3 +127,8 @@ class Tabl_demo(QTableWidget):
             self.setItem(i, 1, item_code)
             self.setItem(i, 2, item_color)
 ``` 
+
+## 05 Tree_Widget
+
+easy demo
+
