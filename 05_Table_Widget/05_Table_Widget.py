@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (QApplication, QTableWidget,
                                QTableWidgetItem)
 
 
-class Tabl_demo(QTableWidget):
+class Table_demo(QTableWidget):
     colors = [("Red", "#FF0000"),
               ("Green", "#00FF00"),
               ("Blue", "#0000FF"),
@@ -15,7 +15,7 @@ class Tabl_demo(QTableWidget):
               ("Yellow", "#F9E56d")]
 
     def __init__(self, parent=None):
-        super(Tabl_demo, self).__init__(parent)
+        super(Table_demo, self).__init__(parent)
         # Create widgets
 
         self.setRowCount(len(self.colors))
@@ -39,9 +39,9 @@ class Tabl_demo(QTableWidget):
 
 if __name__ == '__main__':
     # Create the Qt Application
-    app = QApplication(sys.argv)
+    app = QApplication(sys.argv)  
     # Create and show the form
-    table1 = Tabl_demo()
+    table1 = Table_demo()
     table1.show()
     # Run the main Qt loop
     sys.exit(app.exec())
