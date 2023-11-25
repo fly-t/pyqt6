@@ -1,13 +1,48 @@
 import sys
 from PySide6.QtWidgets import QApplication, QPushButton
+from PySide6.QtCore import QObject, Signal, Slot
 
 
-def function():
-    print("The 'function' has been called!")
+class Communicate(QObject):
+    # create two new signals on the fly: one will handle
+    # int type, the other will handle strings
+    speak = Signal((int,), (str,)) # the first signal is default signal type！！！！！！
+    signal_hello = Signal((str,),(float,)) # , is very important!!!!!!
 
-if __name__ =="__main__":
-    app = QApplication()
-    button = QPushButton("Call function")
-    button.clicked.connect(function)
-    button.show()
-    sys.exit(app.exec())
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.speak[int].connect(self.say_something)
+        self.speak[str].connect(self.say_something)
+        self.signal_hello[str].connect(self.hello_world)
+        self.signal_hello[float].connect(self.hello_world)
+
+    # define a new slot that receives a C 'int' or a 'str'
+    # and has 'say_something' as its name
+    @Slot(int)
+    @Slot(str)
+    def say_something(self, arg):
+        if isinstance(arg, int):
+            print("This is a number:", arg)
+        elif isinstance(arg, str):
+            print("This is a string:", arg)
+
+    @Slot(float)
+    @Slot(str)
+    def hello_world(self,arg):
+        if isinstance(arg,str):
+            print(arg)
+        elif isinstance(arg,float):
+            print("float:",arg)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    someone = Communicate()
+
+    # emit 'speak' signal with different arguments.
+    # we have to specify the str as int is the default
+    someone.speak.emit(10)
+    someone.speak[str].emit("Hello everybody!")
+ 
+    someone.signal_hello.emit("Hello")  # 使用默认的 str 版本
+    someone.signal_hello[float].emit(1.1)  # 显式指定 float 版本
