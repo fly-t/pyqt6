@@ -11,15 +11,15 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.click)
-
-    def click(self):
-        self.ui.pushButton.setText("测试")
+       
+    # create the slot of QtDesinger slot(Key:F4 config)
+    def slot1(self):
+        print("click demo")
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     win = MainWindow()
-    win.setWindowTitle("第一个程序")
+    win.setWindowTitle("Desinger Demo")
     win.show()
     app.exit(app.exec())

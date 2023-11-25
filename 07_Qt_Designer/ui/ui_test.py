@@ -16,43 +16,35 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QToolButton, QWidget)
+    QSizePolicy, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(441, 373)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(350, 200, 75, 23))
-        self.toolButton = QToolButton(self.centralwidget)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setGeometry(QRect(100, 180, 24, 21))
         self.pushButton_2 = QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(50, 100, 75, 23))
+        self.pushButton_2.setGeometry(QRect(180, 140, 75, 23))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QRect(0, 0, 441, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pushButton.clicked.connect(MainWindow.slot1)
+        self.pushButton_2.clicked.connect(MainWindow.slot1)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
     # retranslateUi
 

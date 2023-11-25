@@ -128,7 +128,22 @@ class Tabl_demo(QTableWidget):
             self.setItem(i, 2, item_color)
 ``` 
 
-## 05 Tree_Widget
+## 06 Tree_Widget
 
 easy demo
+
+## 07 QtDesigner
+
+use QtDesinger to desing ui and slot we can focus on logic developing.
+
+![](https://raw.githubusercontent.com/fly-t/images/main/blog/README-2023-11-25-23-49-18.png)
+
+1. push an button on window. 
+2. create slot(key:F4[edit slot], key:F3[exit edit slot] )
+
+3. uic
+
+![](https://raw.githubusercontent.com/fly-t/images/main/blog/README-2023-11-25-23-51-44.png)
+
+4. then you will see the ui of python file.
 
