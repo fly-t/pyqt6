@@ -192,3 +192,6 @@ pyside6-rcc icons.qrc -o rc_icons.py
 
 ## 09_Styling_the_Widgets_Application
 
+官方Qss地址： 不推荐，有些丑
+[https://doc.qt.io/qt-6/stylesheet-examples.html](https://doc.qt.io/qt-6/stylesheet-examples.html)
+
