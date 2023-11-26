@@ -190,3 +190,5 @@ pyside6-rcc icons.qrc -o rc_icons.py
 ```
 
 
+## 09_Styling_the_Widgets_Application
+
