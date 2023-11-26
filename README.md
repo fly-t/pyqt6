@@ -189,4 +189,4 @@ command line
 pyside6-rcc icons.qrc -o rc_icons.py
 ```
 
-with some bug not fix!!!!
+
